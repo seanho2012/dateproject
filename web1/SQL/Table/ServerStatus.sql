@@ -1,4 +1,4 @@
-DROP TABLE ServerStatus
+DROP TABLE IF EXISTS ServerStatus
 
 CREATE TABLE ServerStatus(
     ID INT IDENTITY(1,1) PRIMARY KEY,

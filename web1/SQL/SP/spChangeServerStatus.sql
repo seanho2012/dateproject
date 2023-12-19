@@ -1,4 +1,4 @@
-DROP PROCEDURE [dbo].[spChangeServerStatus]
+DROP PROCEDURE IF EXISTS [dbo].[spChangeServerStatus]
 GO
 SET ANSI_NULLS ON
 GO

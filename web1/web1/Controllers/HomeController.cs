@@ -59,7 +59,6 @@ namespace web1.Controllers
             var tokenTask = GetLineIDToken(code);
             var profileTask = GetLineUserInfo(tokenTask.Result.Id_token);
             var data = profileTask.Result;
-            if (data.sub)
             ViewBag.data = data;
 
             return View();
