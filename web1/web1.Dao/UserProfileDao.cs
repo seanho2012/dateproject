@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,23 +16,12 @@ namespace web1.Dao
         {
             DataTable dt = new DataTable();
             string sql = @"SELECT * FROM UserProfile";
-            using (SqlConnection conn = new SqlConnection(Common.ConfigTool.GetDBConnectionString()))
+            using (IDbConnection conn = new SqlConnection(Common.ConfigTool.GetDBConnectionString()))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
-                sqlAdapter.Fill(dt);
-                conn.Close();
+                return conn.Query<UserProfile>(sql).FirstOrDefault();
+                //conn.Close();
             }
-            var result = (from rw in dt.AsEnumerable()
-                       select new UserProfile()
-                       {
-                           UserID = rw["UserID"].ToString(),
-                           Account = rw["Account"].ToString(),
-                           Password = rw["Password"].ToString(),
-                           UserName = rw["UserName"].ToString()
-                       }).FirstOrDefault();
-            return result;
         }
     }
 }

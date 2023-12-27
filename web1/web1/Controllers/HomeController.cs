@@ -21,7 +21,6 @@ namespace web1.Controllers
         ConfigTool configTool = new ConfigTool(); 
         public ActionResult Index()
         {
-            var test = userProfileService.GetUserData();
             return View();
         }
 

@@ -11,6 +11,14 @@ namespace web1.Model
         /// <summary>
         /// 產生ID_Token的URL
         /// </summary>
+        public int LineProfileID { get; set; }
+        /// <summary>
+        /// 產生ID_Token的URL
+        /// </summary>
+        public int UserID { get; set; }
+        /// <summary>
+        /// 產生ID_Token的URL
+        /// </summary>
         public string iss { get; set; }
         /// <summary>
         /// 產生ID_Token的使用者

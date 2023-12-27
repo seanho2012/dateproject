@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,17 +13,14 @@ namespace web1.Dao
     {
         public string GetServerStatus()
         {
-            DataTable dt = new DataTable();
-            string sql = @"SELECT * FROM fnGetServerStatus()";
-            using (SqlConnection conn = new SqlConnection(Common.ConfigTool.GetDBConnectionString()))
+            string sql = @"SELECT * FROM fnGetServerStatus()", result;
+            using (IDbConnection conn = new SqlConnection(Common.ConfigTool.GetDBConnectionString()))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
-                sqlAdapter.Fill(dt);
+                result = conn.Query<string>(sql).FirstOrDefault();
                 conn.Close();
             }
-            return dt.Rows[0]["ServerStatus"].ToString();
+            return result;
         }
     }
 }
