@@ -13,7 +13,7 @@ namespace web1.Dao
     {
         public string GetLineUserProfile()
         {
-            string sql = @"SELECT * FROM ", result;
+            string sql = @"SELECT * FROM LineProfile WHERE sub = @sub", result;
             using (IDbConnection conn = new SqlConnection(Common.ConfigTool.GetDBConnectionString()))
             {
                 conn.Open();

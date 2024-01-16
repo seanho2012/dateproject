@@ -1,7 +1,6 @@
 DROP TABLE IF EXISTS LineProfile
 CREATE TABLE LineProfile(
     LineProfileID BIGINT IDENTITY(1,1),
-    UserID BIGINT,
     iss VARCHAR(200),
     sub VARCHAR(MAX),
     aud VARCHAR(20),
@@ -12,4 +11,8 @@ CREATE TABLE LineProfile(
     name NVARCHAR(20),
     picture VARCHAR(MAX),
     email VARCHAR(320),
+    CreatedDate DATETIME,
+    CreatedUser VARCHAR(100),
+    ModifiedDate DATETIME,
+    ModifiedUser VARCHAR(100)
 )
