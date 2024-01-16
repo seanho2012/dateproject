@@ -45,7 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LineTokensResponse.cs" />
-    <Compile Include="LineUserProfile.cs" />
+    <Compile Include="CallBackLineUserProfile.cs" />
+    <Compile Include="LineProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserProfile.cs" />
   </ItemGroup>

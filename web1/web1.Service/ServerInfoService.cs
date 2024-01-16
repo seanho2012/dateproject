@@ -9,7 +9,7 @@ namespace web1.Service
 {
     public class ServerInfoService
     {
-        web1.Dao.IServerInfoDao serverInfoDao = new ServerInfoDao();
+        private static IServerInfoDao serverInfoDao = new ServerInfoDao();
         public string GetServerStatus()
         {
             try

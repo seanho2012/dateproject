@@ -10,7 +10,7 @@ namespace web1.Service
 {
     public class UserProfileService
     {
-        web1.Dao.IUserProfileDao userProfileDao = new UserProfileDao();
+        private static IUserProfileDao userProfileDao = new UserProfileDao();
         public UserProfile GetUserData()
         {
             return userProfileDao.GetUserData();

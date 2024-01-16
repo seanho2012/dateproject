@@ -6,21 +6,22 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using web1.Model;
 
 namespace web1.Dao
 {
-    public class UserProfileDao : IUserProfileDao
+    public class AccountDao : IAccountDao
     {
-        public UserProfile GetUserData()
+        public int CreateNewAccount()
         {
-            string sql = @"SELECT * FROM UserProfile";
+            string sql = @"EXEC spCreateNewAccount";
+            int userID;
             using (IDbConnection conn = new SqlConnection(Common.ConfigTool.GetDBConnectionString()))
             {
                 conn.Open();
-                return conn.Query<UserProfile>(sql).FirstOrDefault();
-                //conn.Close();
+                userID = conn.Query<int>(sql).FirstOrDefault();
+                conn.Close();
             }
+            return userID;
         }
     }
 }

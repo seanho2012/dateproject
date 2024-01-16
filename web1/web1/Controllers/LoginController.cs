@@ -15,9 +15,10 @@ namespace web1.Controllers
     public class LoginController : Controller
     {
 
-        ServerInfoService serverInfoService = new ServerInfoService();
-        UserProfileService userProfileService = new UserProfileService();
-        static ConfigTool configTool = new ConfigTool();
+        static ServerInfoService serverInfoService = new ServerInfoService();
+        private static LineService lineService = new LineService();
+        private static ConfigTool configTool = new ConfigTool();
+        private static AccountService accountService = new AccountService();
         // GET: Login
         public ActionResult Index()
         {
@@ -42,13 +43,15 @@ namespace web1.Controllers
         {
             var tokenTask = GetLineIDToken(code);
             var profileTask = GetLineUserInfo(tokenTask.Result.Id_token);
-            var data = profileTask.Result;
-            ViewBag.data = data;
+            var callbackData = profileTask.Result;
+            int userID = accountService.LoginOrSignup(callbackData);
+            ViewBag.data = callbackData;
+            ViewBag.userID = userID;
 
             return View();
         }
 
-        public async Task<LineUserProfile> GetLineUserInfo(string idToken)
+        public async Task<CallBackLineUserProfile> GetLineUserInfo(string idToken)
         {
             var client = new HttpClient();
             string lineProfileLink = configTool.GetWebSettingValue("LineGetProfileUrl");
@@ -59,7 +62,7 @@ namespace web1.Controllers
             var request = new HttpRequestMessage(HttpMethod.Post, lineProfileLink);
             var response = await client.SendAsync(request).ConfigureAwait(continueOnCapturedContext: false);
             response.EnsureSuccessStatusCode();
-            var result = JsonConvert.DeserializeObject<LineUserProfile>(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+            var result = JsonConvert.DeserializeObject<CallBackLineUserProfile>(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             return result;
         }
 

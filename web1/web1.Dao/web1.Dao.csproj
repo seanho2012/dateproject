@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountDao.cs" />
+    <Compile Include="IAccountDao.cs" />
+    <Compile Include="ILineDao.cs" />
     <Compile Include="IServerInfoDao.cs" />
     <Compile Include="IUserProfileDao.cs" />
     <Compile Include="LineDao.cs" />
