@@ -9,7 +9,8 @@ namespace web1
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery.cookie.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -20,11 +21,26 @@ namespace web1
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                        "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                        "~/Content/bootstrap.css",
+                        "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/KendoCSS").Include(
+                        "~/Content/kendo.common-material.min.css",
+                        "~/Content/kendo.material-main.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Kendo").Include(
+                        "~/Scripts/kendo.all.min.js",
+                        "~/Scripts/kendo.all.min.js.map"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                        "~/Scripts/angular.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Home").Include(
+                        "~/Scripts/Home/Home.js",
+                        "~/Scripts/Home/jHome.js"));
         }
     }
 }
