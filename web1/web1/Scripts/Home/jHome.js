@@ -45,8 +45,22 @@
                         return scheduler;
                     }
                 },
-                update: function (e) {
-                    console.log("update:");
+                update: {
+                    type: "post",
+                        dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                            url: "/Scheduler/CreateSchedulerData",
+                                data: function (data) {
+                                    console.log("data", data);
+                                    var scheduler = {
+                                        SchedulerID: data.id,
+                                        StartTime: data.start.toJSON(),
+                                        EndTime: data.end.toJSON(),
+                                        Title: data.title,
+                                        LocationID: data.location
+                                    };
+                                    console.log("scheduler", scheduler);
+                                    return scheduler;
+                                }
                 },
                 destroy: function (e) {
                     console.log("destroy:");
