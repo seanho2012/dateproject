@@ -49,7 +49,9 @@
     <Compile Include="LineTokensResponse.cs" />
     <Compile Include="CallBackLineUserProfile.cs" />
     <Compile Include="LineProfile.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scheduler.cs" />
     <Compile Include="UserProfile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
