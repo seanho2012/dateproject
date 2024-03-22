@@ -29,5 +29,25 @@ namespace web1.Model
         ///</summary>
         [DisplayName("名稱")]
         public string UserName { get; set; }
+
+        /// <summary>
+        /// 創建時間
+        /// </summary>
+        public DateTime CreatedDate { get; set; }
+
+        /// <summary>
+        /// 創建人員
+        /// </summary>
+        public string CreatedUser { get; set; }
+
+        /// <summary>
+        /// 異動時間
+        /// </summary>
+        public DateTime ModifiedDate { get; set; }
+
+        /// <summary>
+        /// 異動人員
+        /// </summary>
+        public string ModifiedUser { get; set; }
     }
 }

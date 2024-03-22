@@ -11,9 +11,9 @@ namespace web1.Service
     public class UserProfileService
     {
         private static IUserProfileDao userProfileDao = new UserProfileDao();
-        public UserProfile GetUserData()
+        public UserProfile GetUserProfileByID(string userID)
         {
-            return userProfileDao.GetUserData();
+            return userProfileDao.GetUserProfileByID(userID);
         }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SchedulerColor.cs" />
     <Compile Include="LineTokensResponse.cs" />
     <Compile Include="CallBackLineUserProfile.cs" />
     <Compile Include="LineProfile.cs" />

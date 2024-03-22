@@ -5,5 +5,9 @@ CREATE TABLE ServerStatus(
     [Status] BIT,
     StartTime DATETIME,
     EndTime DATETIME,
-    IsVaild BIT
+    IsVaild BIT,
+    CreatedDate DATETIME,
+    CreatedUser VARCHAR(100),
+    ModifiedDate DATETIME,
+    ModifiedUser VARCHAR(100)
 )

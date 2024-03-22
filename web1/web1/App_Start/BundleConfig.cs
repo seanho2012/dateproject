@@ -25,11 +25,13 @@ namespace web1
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/bootstrap.css",
-                        "~/Content/site.css"));
+                        "~/Content/site.css",
+                        "~/Content/bootstrap-4.css"));
 
-            bundles.Add(new StyleBundle("~/Content/KendoCSS").Include(
-                        "~/Content/kendo.common-material.min.css",
-                        "~/Content/kendo.material-main.min.css"));
+            //bundles.Add(new StyleBundle("~/Content/KendoCSS").Include(
+            //            "~/Content/kendo.common-material.min.css",
+            //            "~/Content/kendo.material-main.min.css",
+            //            "~/Content/kendo/2023.3.1114/bootstrap-4.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/Kendo").Include(
                         "~/Scripts/kendo.all.min.js",
@@ -37,6 +39,9 @@ namespace web1
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/angular.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Common").Include(
+                        "~/Scripts/Common.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/Home").Include(
                         "~/Scripts/Home/Home.js",

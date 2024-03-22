@@ -3,6 +3,6 @@ namespace web1.Dao
 {
     public interface IUserProfileDao
     {
-        UserProfile GetUserData();
+        UserProfile GetUserProfileByID(string userID);
     }
 }

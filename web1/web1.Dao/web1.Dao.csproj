@@ -52,10 +52,12 @@
     <Compile Include="AccountDao.cs" />
     <Compile Include="IAccountDao.cs" />
     <Compile Include="ILineDao.cs" />
+    <Compile Include="ISchedulerDao.cs" />
     <Compile Include="IServerInfoDao.cs" />
     <Compile Include="IUserProfileDao.cs" />
     <Compile Include="LineDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchedulerDao.cs" />
     <Compile Include="ServerInfoDao.cs" />
     <Compile Include="UserProfileDao.cs" />
   </ItemGroup>

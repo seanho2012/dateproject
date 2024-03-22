@@ -137,8 +137,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authorize\AdminAuthorizeAttribute.cs" />
+    <Compile Include="Authorize\BasicAuthenticationFilter.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DropDownListController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -146,6 +151,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-4-dark.css" />
+    <Content Include="Content\bootstrap-4.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -209,13 +216,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\kendo\2023.3.1114\font-icons\kendo-font-icons.ttf" />
     <None Include="Properties\PublishProfiles\dateproject - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\dateproject - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\dateproject - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\dateproject - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\Common.js" />
     <Content Include="Scripts\Home\jHome.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\kendo.all.min.js" />
     <Content Include="Scripts\kendo\2023.3.1114\cultures\kendo.culture.aa-DJ.js" />
     <Content Include="Scripts\kendo\2023.3.1114\cultures\kendo.culture.aa-DJ.min.js" />
     <Content Include="Scripts\kendo\2023.3.1114\cultures\kendo.culture.aa-ER.js" />
@@ -3295,6 +3309,8 @@
     <Content Include="Scripts\kendo\2023.3.1114\cultures\kendo.culture.aa-ET.min.js.map" />
     <Content Include="Scripts\kendo\2023.3.1114\cultures\kendo.culture.aa-ER.min.js.map" />
     <Content Include="Scripts\kendo\2023.3.1114\cultures\kendo.culture.aa-DJ.min.js.map" />
+    <Content Include="Scripts\kendo.all.min.js.map" />
+    <Content Include="Views\Home\EditWindow.cshtml" />
     <TypeScriptCompile Include="Scripts\Home\Home.ts" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3321,12 +3337,15 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ApiTest.cshtml" />
-    <Content Include="Views\Login\LineCallBack.cshtml" />
-    <Content Include="Views\Login\LineLogin.cshtml" />
+    <Content Include="Views\Account\LineCallBack.cshtml" />
+    <Content Include="Views\Account\LineLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\DropDownList\" />
+    <Folder Include="Views\Error\" />
     <Folder Include="Views\Scheduler\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,16 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<script id="custom-template" type="text/x-kendo-template">
+    Title:<input name="title" data-role="textbox"\><br>
+    Description:<textarea name="description" data-role="textarea" data-rows="3"\></textarea><br>
+    Start:<input name="start" data-role="datetimepicker"\><br>
+    End:<input name="end" data-role="datetimepicker"\><br>
+    Location:<input name="location" data-role="textbox"\><br>
+    Color:
+    <div data-container-for="schedulerColor" class="k-edit-field">
+      <select id="schedulerColor" data-bind="value:schedulerColor" data-role="dropdownlist">        
+      </select>
+    </div>
+</script>

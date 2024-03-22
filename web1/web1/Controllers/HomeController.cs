@@ -11,16 +11,20 @@ using System.Web.Mvc;
 using web1.Service;
 using web1.Model;
 using web1.Common;
+using web1.Attributes;
 
 namespace web1.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         ServerInfoService serverInfoService = new ServerInfoService();
         UserProfileService userProfileService = new UserProfileService();
-        ConfigTool configTool = new ConfigTool(); 
+        ConfigTool configTool = new ConfigTool();
+
+        [AdminAuthorize]
         public ActionResult Index()
         {
+            ViewBag.UserID = this.userInfo.UserID;
             return View();
         }
 
